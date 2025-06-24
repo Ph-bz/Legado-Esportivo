@@ -1,0 +1,194 @@
+/* RESET BÁSICO */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    ---colorfont1: #1c2960;
+    ---colorfont2: #728cff;
+    ---colorfont3: #b1baff;
+    ---colorfont4: #000048;
+    ---colorfont5: #c0c1e1;
+    ---colorfont6: #0a1540;
+    ---colorfont7: #a5b5ff;
+}
+html{
+    scroll-behavior: smooth;
+}
+#container{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   align-items: center;
+}
+header{
+    background: var(---colorfont6);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+header h1{
+    font-size: 1.8rem;
+    color: var(---colorfont2);
+}
+header nav ul{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 5px;
+    margin-left: 150px;
+}
+header nav ul li{
+    padding: 7px;
+    margin: 5px;
+    position: relative;
+}
+header nav ul li::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 0;
+    bottom: 0;
+    background: var(---colorfont2);
+    height: 2px;
+    transition: width 0.3s ease;
+}
+header nav ul li:hover::after{
+    width: 100%;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: var(---colorfont2);
+    font-size: 1.2rem;
+    transition: color .5s;
+}
+span{
+    color: #0f2bff;
+}
+#titulo{
+    background: var(---colorfont7);
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+#conteudo{
+    display: flex;
+    justify-content: center;
+}
+.produto{
+    width: 205px;
+    padding: 15px;
+    height: 400px;
+    margin: 15px;
+    background:var(---colorfont3) ;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px;
+    margin-bottom: 50px;
+}
+.produto img{
+    width: 100%;
+    width: 175px;
+    height: 150px;
+    margin-top: 15px;
+    border-radius: 20px;
+}
+.produto h2{
+    font-size: 1.3rem;
+    color: var(---colorfont4);
+    margin-top: 15px;
+}
+.produto p{
+    color: var(---colorfont1);
+    margin-top: 20px;
+}
+.produto button{
+    color: var(---colorfont5);
+    background: var(---colorfont1);
+    border: none;
+    width: 120px;
+    height: 40px;
+    margin-top: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background .7s ease;
+}
+.produto button:hover{
+    background: #000000;
+    box-shadow: 0 0 10px var(---colorfont1);
+}
+#titulo-espt{
+    background: var(---colorfont7);
+    text-align: center;
+    padding: 10px;
+}
+#esportes{
+    background: var(---colorfont1);
+    display: flex;
+    justify-content: center;
+}
+#esportes img{
+    margin: 50px;
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+#esportes img:hover{
+    transform: scale(1.1);
+}
+#esportes h2{
+    text-align: center;
+    color: #f4f4f4;
+    margin: 30px;
+    transition: transform 0.5s ease;
+}
+#esportes h2:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+footer{
+    background: var(---colorfont6);
+    text-align: center;
+    color: #f4f4f4;
+}
+footer img{
+    width: 30px;
+}
+footer a{
+    text-decoration: none;
+    color: #f4f4f4;
+    padding: 10px;
+}
+#contato{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    padding-top: 30px;
+}
+#direitos{
+    padding: 20px;
+    padding-top: 35px;
+}
+/* RESPONSIVDADE */
+
+@media (width <=1024px){
+    #conteudo{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+    #esportes{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    footer{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+}
