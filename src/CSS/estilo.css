@@ -63,15 +63,49 @@ header nav ul li a{
     color: var(---colorfont2);
     font-size: 1.2rem;
     transition: color .5s;
+    font-weight: 900;
+
 }
 span{
     color: #0f2bff;
+}
+.hamburguer {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    display: none;
+}
+.barra{
+    background: var(---colorfont2);
+    display: block;
+    width: 3rem;
+    height: .3rem;
+    margin: .5rem auto;
+    border-radius: 1px;
+    transition: .7s;
 }
 #titulo{
     background: var(---colorfont7);
     text-align: center;
     padding: 30px;
     margin-bottom: 20px;
+}
+#titulo span{
+    animation: titulo 3s infinite;
+}
+    @keyframes titulo {
+  0% {
+    color: blue;
+  }
+  33% {
+    color: #108bff;
+  }
+  66% {
+    color: #46a6ff;
+  }
+  100%{
+    color: blue;
+  }
 }
 #conteudo{
     display: flex;
@@ -174,13 +208,43 @@ footer a{
 /* RESPONSIVDADE */
 
 @media (width <=1024px){
-    #conteudo{
-        display: grid;
-        grid-template-columns: 1fr;
+     .menu-header {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: -100%;
+        gap: 3rem;
         justify-content: center;
+        flex-direction: column;
+    }
+    .menu-header.active{
+        background: rgb(0, 0, 72, 0.5);
+        position: fixed;
+    }
+        .active {
+        left: 0;
+    }
+        .hamburguer {
+        display: block;
+    }
+    .hamburguer.active .barra:first-child{
+    transform: translateY(12px) rotate(360deg) rotate(45deg);
+    }
+    .hamburguer.active .barra:nth-child(2){
+    opacity: 0;
+    }
+    .hamburguer.active .barra:last-child{
+    transform: translateY(-12px) rotate(-360deg) rotate(-45deg);
+    }
+    #conteudo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     #esportes{
-        display: flex;
+        display: grid   ;
         flex-direction: column;
         text-align: center;
     }
